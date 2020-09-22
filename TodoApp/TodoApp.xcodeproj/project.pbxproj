@@ -15,6 +15,8 @@
 		FAF55EFF2517BACD00E8EC93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF55EFE2517BACD00E8EC93 /* Assets.xcassets */; };
 		FAF55F022517BACD00E8EC93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF55F002517BACD00E8EC93 /* LaunchScreen.storyboard */; };
 		FAF55F0D2517BACE00E8EC93 /* TodoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF55F0C2517BACE00E8EC93 /* TodoAppTests.swift */; };
+		FAF55F1B2519080400E8EC93 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF55F1A2519080400E8EC93 /* TodoTableViewController.swift */; };
+		FAF55F1D25190A6200E8EC93 /* TodoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF55F1C25190A6200E8EC93 /* TodoMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		FAF55F082517BACE00E8EC93 /* TodoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF55F0C2517BACE00E8EC93 /* TodoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppTests.swift; sourceTree = "<group>"; };
 		FAF55F0E2517BACE00E8EC93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAF55F1A2519080400E8EC93 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
+		FAF55F1C25190A6200E8EC93 /* TodoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +88,13 @@
 				FAF55EF22517BACC00E8EC93 /* AppDelegate.swift */,
 				FAF55EF42517BACC00E8EC93 /* SceneDelegate.swift */,
 				FAF55EF62517BACC00E8EC93 /* ViewController.swift */,
+				FAF55F1A2519080400E8EC93 /* TodoTableViewController.swift */,
 				FAF55EF82517BACC00E8EC93 /* Main.storyboard */,
 				FAF55EFE2517BACD00E8EC93 /* Assets.xcassets */,
 				FAF55F002517BACD00E8EC93 /* LaunchScreen.storyboard */,
 				FAF55F032517BACD00E8EC93 /* Info.plist */,
 				FAF55EFB2517BACC00E8EC93 /* TodoApp.xcdatamodeld */,
+				FAF55F1C25190A6200E8EC93 /* TodoMock.swift */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -204,9 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF55EF72517BACC00E8EC93 /* ViewController.swift in Sources */,
+				FAF55F1B2519080400E8EC93 /* TodoTableViewController.swift in Sources */,
 				FAF55EF32517BACC00E8EC93 /* AppDelegate.swift in Sources */,
 				FAF55EF52517BACC00E8EC93 /* SceneDelegate.swift in Sources */,
 				FAF55EFD2517BACC00E8EC93 /* TodoApp.xcdatamodeld in Sources */,
+				FAF55F1D25190A6200E8EC93 /* TodoMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
