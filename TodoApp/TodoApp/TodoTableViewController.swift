@@ -39,10 +39,13 @@ class TodoTableViewController: UITableViewController {
         return mockData.count
     }
 
+    // 表示するCellのViewを返すデリゲートメソッド
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as? TodoTableViewCell else {
+            fatalError("The dequeued cell is not instance of TodoTableViewCell.")
+        }
+        
+        cell.titleLabel.text = mockData[indexPath.row].title
 
         return cell
     }
