@@ -7,21 +7,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--TodoDetail-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="TodoDetail" customClass="ViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトルを入れてください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dh1-jY-L3W">
+                                <rect key="frame" x="16" y="120" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dh1-jY-L3W" secondAttribute="trailing" constant="16" id="94x-dt-A1m"/>
+                            <constraint firstItem="dh1-jY-L3W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="TbZ-Op-3BO"/>
+                            <constraint firstItem="dh1-jY-L3W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wud-zI-Dif"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5jC-1z-LeJ"/>
+                    <navigationItem key="navigationItem" title="TodoDetail" id="EbX-Sj-jm1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="n5q-me-V6R"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4CW-mq-z5g"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997.1014492753625" y="135.9375"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="135.9375"/>
         </scene>
         <!--TodoList-->
         <scene sceneID="Tro-hh-9uc">
@@ -66,7 +81,7 @@
                     <navigationItem key="navigationItem" title="TodoList" id="Hx9-G6-0sV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EZI-eo-1Hv">
                             <connections>
-                                <segue destination="G1V-Vd-OXu" kind="presentation" identifier="AddTodo" id="PiL-h6-iMi"/>
+                                <segue destination="6G7-jj-tJ4" kind="presentation" id="EVf-7o-2xM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -94,22 +109,22 @@
             <point key="canvasLocation" x="-600" y="135.9375"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Guq-h0-faU">
+        <scene sceneID="Vkb-nW-HEg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G1V-Vd-OXu" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6G7-jj-tJ4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8pp-Fc-ojs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o3L-Cw-wLK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="IkN-sA-Qso"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NIh-5u-f8s"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pvv-W6-Lw5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAJ-2D-559" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086.9565217391305" y="135.9375"/>
+            <point key="canvasLocation" x="1142" y="136"/>
         </scene>
     </scenes>
 </document>
