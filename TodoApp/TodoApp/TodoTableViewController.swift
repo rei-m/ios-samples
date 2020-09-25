@@ -42,9 +42,15 @@ class TodoTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell", for: indexPath) as? TodoTableViewCell else {
             fatalError("The dequeued cell is not instance of TodoTableViewCell.")
         }
-        
-        cell.titleLabel.text = mockData[indexPath.row].title
 
+        let todo = mockData[indexPath.row]
+        let formatter: DateFormatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.dateFormat = "yyyy年MM月dd日 HH時mm分"
+        
+        cell.titleLabel.text = todo.title
+        cell.dateLabel.text = formatter.string(from: todo.createdAt)
+        
         return cell
     }
 

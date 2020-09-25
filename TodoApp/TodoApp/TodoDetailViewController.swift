@@ -15,6 +15,7 @@ class TodoDetailViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var nav: UINavigationItem!
     
     var todo: TodoMock?
     
@@ -25,6 +26,9 @@ class TodoDetailViewController: UIViewController {
         if let todo = todo {
             titleTextField.text = todo.title
             contentTextView.text = todo.content
+            nav.title = "Edit Todo"
+        } else {
+            nav.title = "Add Todo"
         }
     }
 
@@ -58,7 +62,6 @@ class TodoDetailViewController: UIViewController {
 
         let title = titleTextField.text ?? ""
         let content = contentTextView.text ?? ""
-
         guard let todo = TodoMock(title: title, content: content) else {
             return
         }
