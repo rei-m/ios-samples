@@ -89,3 +89,7 @@ fastlane/test_output
 
 iOSInjectionProject/
 
+# 自分で追加したやつ
+
+TodoApp.xcodeproj/
+
