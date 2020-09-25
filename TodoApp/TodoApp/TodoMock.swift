@@ -16,7 +16,10 @@ class TodoMock {
     let createdAt: Date
     
     // MARK: Initialization
-    init(title: String, content: String, createdAt: Date = Date()) {
+    init?(title: String, content: String, createdAt: Date = Date()) {
+        guard !title.isEmpty || !content.isEmpty else {
+            return nil
+        }
         self.title = title
         self.content = content
         self.isChecked = false

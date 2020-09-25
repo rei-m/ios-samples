@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import os.log
 
 class TodoTableViewController: UITableViewController {
 
-    private let mockData = [
-        TodoMock(title: "test1", content: "content1"),
-        TodoMock(title: "test2", content: "content2")
-    ]
-    
+    private var mockData: [TodoMock] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,14 +83,49 @@ class TodoTableViewController: UITableViewController {
     }
     */
 
-    /*
+    // MARK: - Action
+    // 先にIBActionを定義してからStoryboardでExitにSequeを関連付ける
+    @IBAction func unwindToTodoList(sender: UIStoryboardSegue) {
+        // sender.source: 遷移元のViewController
+        // sender.destination: 遷移先のViewController
+        guard let sourceViewController = sender.source as? TodoDetailViewController, let todo = sourceViewController.todo else {
+            return
+        }
+
+        // indexPathForSelectedRowで行を選択していた場合はそこのindexPathが取れる
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            mockData[selectedIndexPath.row] = todo
+            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        } else {
+            // プロパティに追加してViewを更新
+             mockData.insert(todo, at: 0)
+             let newIndexPath = IndexPath(row: 0, section:  0)
+             tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
+        switch segue.identifier {
+        case "AddTodo":
+            os_log("Adding a new Todo.", log: .default, type: .debug)
+        case "ShowTodo":
+            // 選択したレコードのTodoを取得して遷移先のVCに事前に送り込む
+            guard let destinationVC = segue.destination as? TodoDetailViewController else {
+                return
+            }
+   
+            guard let senderCell = sender as? TodoTableViewCell, let selectedIndexPath = tableView.indexPath(for: senderCell) else {
+                return
+            }
 
+            destinationVC.todo = mockData[selectedIndexPath.row]
+        default:
+            fatalError("The TodoTableViewController received unknown segue")
+        }
+    }
 }
