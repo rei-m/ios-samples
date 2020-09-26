@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreData
 import os.log
 
 class TodoTableViewController: UITableViewController {
 
-    private var mockData: [TodoMock] = []
-
+//    private var todoList: [TodoMock] = []
+    private var todoList: [Todo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,20 @@ class TodoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Todo>(entityName: "Todo")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
+
+        do {
+            todoList = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
 
     // MARK: - Table view data source
@@ -34,7 +50,7 @@ class TodoTableViewController: UITableViewController {
     // セクションに対する行数を決めるデリゲートメソッド
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return mockData.count
+        return todoList.count
     }
 
     // 表示するCellのViewを返すデリゲートメソッド
@@ -43,13 +59,13 @@ class TodoTableViewController: UITableViewController {
             fatalError("The dequeued cell is not instance of TodoTableViewCell.")
         }
 
-        let todo = mockData[indexPath.row]
+        let todo = todoList[indexPath.row]
         let formatter: DateFormatter = DateFormatter()
         formatter.calendar = Calendar(identifier: .gregorian)
         formatter.dateFormat = "yyyy年MM月dd日 HH時mm分"
         
         cell.titleLabel.text = todo.title
-        cell.dateLabel.text = formatter.string(from: todo.createdAt)
+        cell.dateLabel.text = formatter.string(from: todo.createdAt!)
         
         return cell
     }
@@ -100,11 +116,11 @@ class TodoTableViewController: UITableViewController {
 
         // indexPathForSelectedRowで行を選択していた場合はそこのindexPathが取れる
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            mockData[selectedIndexPath.row] = todo
+            todoList[selectedIndexPath.row] = todo
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
         } else {
             // プロパティに追加してViewを更新
-             mockData.insert(todo, at: 0)
+             todoList.insert(todo, at: 0)
              let newIndexPath = IndexPath(row: 0, section:  0)
              tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
@@ -129,7 +145,7 @@ class TodoTableViewController: UITableViewController {
                 return
             }
 
-            destinationVC.todo = mockData[selectedIndexPath.row]
+            destinationVC.todo = todoList[selectedIndexPath.row]
         default:
             fatalError("The TodoTableViewController received unknown segue")
         }

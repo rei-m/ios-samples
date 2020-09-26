@@ -17,8 +17,8 @@ class TodoDetailViewController: UIViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var nav: UINavigationItem!
     
-    var todo: TodoMock?
-    
+    var todo: Todo?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -62,10 +62,21 @@ class TodoDetailViewController: UIViewController {
 
         let title = titleTextField.text ?? ""
         let content = contentTextView.text ?? ""
-        guard let todo = TodoMock(title: title, content: content) else {
-            return
+
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+          return
+        }
+
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let todo: Todo = self.todo ?? Todo(context: managedContext)
+        todo.title = title
+        todo.content = content
+        if (todo.createdAt == nil) {
+            todo.createdAt = Date()
         }
         
+        appDelegate.saveContext()
+
         self.todo = todo
     }
 }
