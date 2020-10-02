@@ -17,6 +17,7 @@
 		FAA6E8A925271B1000931EAB /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6E8A825271B1000931EAB /* ArticleTableViewController.swift */; };
 		FAA6E8AC2527331700931EAB /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6E8AB2527331700931EAB /* Article.swift */; };
 		FAA6E8AF25273BF100931EAB /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6E8AE25273BF100931EAB /* ArticleTableViewCell.swift */; };
+		FAA6E8B22527820800931EAB /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6E8B12527820800931EAB /* QueryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		FAA6E8A825271B1000931EAB /* ArticleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		FAA6E8AB2527331700931EAB /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		FAA6E8AE25273BF100931EAB /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		FAA6E8B12527820800931EAB /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		FAA6E8832527179E00931EAB /* UrlSessionSample */ = {
 			isa = PBXGroup;
 			children = (
+				FAA6E8B0252781C900931EAB /* Network */,
 				FAA6E8AD25273BD500931EAB /* Components */,
 				FAA6E8AA2527330400931EAB /* Model */,
 				FAA6E8A7252719F500931EAB /* Resources */,
@@ -138,6 +141,14 @@
 				FAA6E8AE25273BF100931EAB /* ArticleTableViewCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FAA6E8B0252781C900931EAB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FAA6E8B12527820800931EAB /* QueryService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 				FAA6E8892527179E00931EAB /* ViewController.swift in Sources */,
 				FAA6E8852527179E00931EAB /* AppDelegate.swift in Sources */,
 				FAA6E8872527179E00931EAB /* SceneDelegate.swift in Sources */,
+				FAA6E8B22527820800931EAB /* QueryService.swift in Sources */,
 				FAA6E8AF25273BF100931EAB /* ArticleTableViewCell.swift in Sources */,
 				FAA6E8AC2527331700931EAB /* Article.swift in Sources */,
 			);

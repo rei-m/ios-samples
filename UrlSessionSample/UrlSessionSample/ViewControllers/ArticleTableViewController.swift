@@ -9,15 +9,19 @@
 import UIKit
 
 class ArticleTableViewController: UITableViewController {
-
-    // https://qiita.com/api/v2/items?page=1&per_page=20 を叩く (1時間に60回まで)
+    //
+    // MARK: - Constants
+    //
+    let queryService = QueryService()
     
-    private let articles = [
-        Article(title: "title1", body: "body1", createdAt: Date()),
-        Article(title: "title2", body: "body2", createdAt: Date()),
-        Article(title: "title3", body: "body3", createdAt: Date()),
-        Article(title: "title4", body: "body4", createdAt: Date())
-    ]
+//    private let articles = [
+//        Article(title: "title1", body: "body1", createdAt: Date()),
+//        Article(title: "title2", body: "body2", createdAt: Date()),
+//        Article(title: "title3", body: "body3", createdAt: Date()),
+//        Article(title: "title4", body: "body4", createdAt: Date())
+//    ]
+
+    private var articles: [Article] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,23 @@ class ArticleTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
+        // TODO: 調べる
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        queryService.getSearchResults() { [weak self] results, errorMessage in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+
+            if let results = results {
+                self?.articles = results
+                self?.tableView.reloadData()
+                self?.tableView.setContentOffset(CGPoint.zero, animated: false)
+            }
+
+            if !errorMessage.isEmpty {
+                print("Search error: \(errorMessage)")
+            }
+        }
     }
 
     // MARK: - Table view data source
