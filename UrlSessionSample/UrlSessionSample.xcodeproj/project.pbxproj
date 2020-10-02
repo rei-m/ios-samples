@@ -79,12 +79,11 @@
 		FAA6E8832527179E00931EAB /* UrlSessionSample */ = {
 			isa = PBXGroup;
 			children = (
+				FAA6E8A7252719F500931EAB /* Resources */,
+				FAA6E8A62527199000931EAB /* ViewControllers */,
 				FAA6E8842527179E00931EAB /* AppDelegate.swift */,
 				FAA6E8862527179E00931EAB /* SceneDelegate.swift */,
-				FAA6E8882527179E00931EAB /* ViewController.swift */,
-				FAA6E88A2527179E00931EAB /* Main.storyboard */,
 				FAA6E88D2527179E00931EAB /* Assets.xcassets */,
-				FAA6E88F2527179E00931EAB /* LaunchScreen.storyboard */,
 				FAA6E8922527179E00931EAB /* Info.plist */,
 			);
 			path = UrlSessionSample;
@@ -97,6 +96,23 @@
 				FAA6E89D2527179F00931EAB /* Info.plist */,
 			);
 			path = UrlSessionSampleTests;
+			sourceTree = "<group>";
+		};
+		FAA6E8A62527199000931EAB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA6E8882527179E00931EAB /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FAA6E8A7252719F500931EAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAA6E88F2527179E00931EAB /* LaunchScreen.storyboard */,
+				FAA6E88A2527179E00931EAB /* Main.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
