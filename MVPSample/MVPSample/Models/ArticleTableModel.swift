@@ -7,7 +7,11 @@
 
 import Foundation
 
-class ArticleTableModel {
+protocol ArticleTableModelProtocol {
+    func fetchArticles(completion: @escaping ([Article]?, String) -> Void)
+}
+
+class ArticleTableModel: ArticleTableModelProtocol {
 
     // MARK - Properties
     
