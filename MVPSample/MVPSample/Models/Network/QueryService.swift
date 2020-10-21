@@ -26,12 +26,21 @@ class QueryService {
     // MARK: - Type Alias
     //
     typealias JSONDictionary = [String: Any]
-    typealias SearchCompletionHandler = ([Article]?, String) -> Void
+
+    //
+    // MARK: - Error
+    //
+    enum QueryServiceError: Error {
+        /// 取得に失敗
+        case getFailure(_ reason: String)
+        /// 内容が不正
+        case invalidContents(_ reason: String)
+    }
     
     //
     // MARK: - Internal Methods
     //
-    func getSearchResults(searchCompletion: @escaping SearchCompletionHandler) {
+    func getSearchResults(searchCompletion: @escaping (Result<[Article], Error>) -> Void) {
 
         dataTask?.cancel()
         
@@ -54,7 +63,7 @@ class QueryService {
 
             if let error = error {
                 DispatchQueue.main.async {
-                    searchCompletion(nil, "DataTask error: \(error.localizedDescription)")
+                    searchCompletion(Result.failure(QueryServiceError.getFailure(error.localizedDescription)))
                 }
                 return
             }
@@ -65,7 +74,7 @@ class QueryService {
                 let result = self?.updateSearchResults(data)
             {
                 DispatchQueue.main.async {
-                   searchCompletion(result.0, result.1)
+                   searchCompletion(result)
                 }
             }
         }
@@ -76,14 +85,13 @@ class QueryService {
     //
     // MARK: - Private Methods
     //
-    private func updateSearchResults(_ data: Data) -> ([Article]?, String) {
+    private func updateSearchResults(_ data: Data) -> (Result<[Article], Error>) {
         var response: [JSONDictionary]?
 
         do {
             response = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [JSONDictionary]
         } catch let parseError as NSError {
-            let errorMessage = "JSONSerialization error: \(parseError.localizedDescription)\n"
-            return (nil, errorMessage)
+            return Result.failure(QueryServiceError.invalidContents("JSONSerialization error: \(parseError.localizedDescription)\n"))
         }
 
         var articles: [Article] = []
@@ -100,6 +108,10 @@ class QueryService {
             }
         }
 
-        return (articles, errorMessage)
+        if errorMessage.isEmpty {
+            return Result.success(articles)
+        } else {
+            return Result.failure(QueryServiceError.invalidContents(errorMessage))
+        }
     }
 }
