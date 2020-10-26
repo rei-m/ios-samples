@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		FA5DF37E253217E000F1332D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF37D253217E000F1332D /* AppDelegate.swift */; };
 		FA5DF380253217E000F1332D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF37F253217E000F1332D /* SceneDelegate.swift */; };
-		FA5DF382253217E000F1332D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF381253217E000F1332D /* ViewController.swift */; };
+		FA5DF382253217E000F1332D /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF381253217E000F1332D /* ArticleTableViewController.swift */; };
 		FA5DF385253217E000F1332D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5DF383253217E000F1332D /* Main.storyboard */; };
 		FA5DF387253217E200F1332D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5DF386253217E200F1332D /* Assets.xcassets */; };
 		FA5DF38A253217E200F1332D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5DF388253217E200F1332D /* LaunchScreen.storyboard */; };
 		FA5DF395253217E200F1332D /* MVPSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF394253217E200F1332D /* MVPSampleTests.swift */; };
 		FA5DF3A0253217E200F1332D /* MVPSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF39F253217E200F1332D /* MVPSampleUITests.swift */; };
-		FA5DF3B625321ACC00F1332D /* ArticleTableContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF3B525321ACC00F1332D /* ArticleTableContract.swift */; };
 		FA5DF3C525321C5300F1332D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF3C425321C5300F1332D /* Article.swift */; };
 		FA5DF3CE25321E8300F1332D /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF3CD25321E8300F1332D /* QueryService.swift */; };
 		FA5DF3D62532204200F1332D /* ArticleTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF3D52532204200F1332D /* ArticleTableModel.swift */; };
+		FAC4BBCC2546325400D02541 /* AricleTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4BBCB2546325400D02541 /* AricleTablePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,7 @@
 		FA5DF37A253217E000F1332D /* MVPSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVPSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5DF37D253217E000F1332D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA5DF37F253217E000F1332D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA5DF381253217E000F1332D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA5DF381253217E000F1332D /* ArticleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		FA5DF384253217E000F1332D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA5DF386253217E200F1332D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5DF389253217E200F1332D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,10 +53,10 @@
 		FA5DF39B253217E200F1332D /* MVPSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVPSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5DF39F253217E200F1332D /* MVPSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVPSampleUITests.swift; sourceTree = "<group>"; };
 		FA5DF3A1253217E200F1332D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA5DF3B525321ACC00F1332D /* ArticleTableContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableContract.swift; sourceTree = "<group>"; };
 		FA5DF3C425321C5300F1332D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		FA5DF3CD25321E8300F1332D /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		FA5DF3D52532204200F1332D /* ArticleTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableModel.swift; sourceTree = "<group>"; };
+		FAC4BBCB2546325400D02541 /* AricleTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AricleTablePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,13 +107,11 @@
 		FA5DF37C253217E000F1332D /* MVPSample */ = {
 			isa = PBXGroup;
 			children = (
-				FA5DF3B42532199C00F1332D /* Contracts */,
 				FA5DF3B32532192900F1332D /* Presenters */,
 				FA5DF3B22532192200F1332D /* Views */,
 				FA5DF3B02532190E00F1332D /* Models */,
 				FA5DF37D253217E000F1332D /* AppDelegate.swift */,
 				FA5DF37F253217E000F1332D /* SceneDelegate.swift */,
-				FA5DF381253217E000F1332D /* ViewController.swift */,
 				FA5DF383253217E000F1332D /* Main.storyboard */,
 				FA5DF386253217E200F1332D /* Assets.xcassets */,
 				FA5DF388253217E200F1332D /* LaunchScreen.storyboard */,
@@ -153,6 +151,7 @@
 		FA5DF3B22532192200F1332D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA5DF381253217E000F1332D /* ArticleTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,16 +159,9 @@
 		FA5DF3B32532192900F1332D /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4BBCB2546325400D02541 /* AricleTablePresenter.swift */,
 			);
 			path = Presenters;
-			sourceTree = "<group>";
-		};
-		FA5DF3B42532199C00F1332D /* Contracts */ = {
-			isa = PBXGroup;
-			children = (
-				FA5DF3B525321ACC00F1332D /* ArticleTableContract.swift */,
-			);
-			path = Contracts;
 			sourceTree = "<group>";
 		};
 		FA5DF3C025321C1600F1332D /* Entities */ = {
@@ -319,10 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5DF3D62532204200F1332D /* ArticleTableModel.swift in Sources */,
-				FA5DF382253217E000F1332D /* ViewController.swift in Sources */,
+				FA5DF382253217E000F1332D /* ArticleTableViewController.swift in Sources */,
 				FA5DF37E253217E000F1332D /* AppDelegate.swift in Sources */,
+				FAC4BBCC2546325400D02541 /* AricleTablePresenter.swift in Sources */,
 				FA5DF380253217E000F1332D /* SceneDelegate.swift in Sources */,
-				FA5DF3B625321ACC00F1332D /* ArticleTableContract.swift in Sources */,
 				FA5DF3CE25321E8300F1332D /* QueryService.swift in Sources */,
 				FA5DF3C525321C5300F1332D /* Article.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ArticleTableModelProtocol {
-    func fetchArticles(completion: @escaping (Result<[Article]?, Error>) -> Void)
+    func fetchArticles(completion: @escaping (Result<[Article], Error>) -> Void)
 }
 
 class ArticleTableModel: ArticleTableModelProtocol {
@@ -21,7 +21,7 @@ class ArticleTableModel: ArticleTableModelProtocol {
         self.queryService = queryService
     }
     
-    func fetchArticles(completion: @escaping (Result<[Article]?, Error>) -> Void) {
+    func fetchArticles(completion: @escaping (Result<[Article], Error>) -> Void) {
         queryService.getSearchResults(searchCompletion: completion)
     }
 }
