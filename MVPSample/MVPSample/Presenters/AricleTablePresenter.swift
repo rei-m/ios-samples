@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol ArticleTablePresenterProtocol {
+protocol ArticleTablePresenterProtocol: AnyObject {
     func viewDidLoad()
 }
 
 class ArticleTablePresenter: ArticleTablePresenterProtocol {
     
-    private let view: ArticleTableViewProtocol
+    private weak var view: ArticleTableViewProtocol!
     private let model: ArticleTableModelProtocol
     
     init(view: ArticleTableViewProtocol, model: ArticleTableModelProtocol) {

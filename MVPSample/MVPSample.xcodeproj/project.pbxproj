@@ -19,6 +19,7 @@
 		FA5DF3CE25321E8300F1332D /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF3CD25321E8300F1332D /* QueryService.swift */; };
 		FA5DF3D62532204200F1332D /* ArticleTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5DF3D52532204200F1332D /* ArticleTableModel.swift */; };
 		FAC4BBCC2546325400D02541 /* AricleTablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4BBCB2546325400D02541 /* AricleTablePresenter.swift */; };
+		FAC4BBD22548D52F00D02541 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4BBD12548D52F00D02541 /* ArticleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FA5DF3CD25321E8300F1332D /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
 		FA5DF3D52532204200F1332D /* ArticleTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableModel.swift; sourceTree = "<group>"; };
 		FAC4BBCB2546325400D02541 /* AricleTablePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AricleTablePresenter.swift; sourceTree = "<group>"; };
+		FAC4BBD12548D52F00D02541 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		FA5DF3B22532192200F1332D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAC4BBD02548D50C00D02541 /* Components */,
 				FA5DF381253217E000F1332D /* ArticleTableViewController.swift */,
 			);
 			path = Views;
@@ -178,6 +181,14 @@
 				FA5DF3CD25321E8300F1332D /* QueryService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		FAC4BBD02548D50C00D02541 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FAC4BBD12548D52F00D02541 /* ArticleTableViewCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				FA5DF382253217E000F1332D /* ArticleTableViewController.swift in Sources */,
 				FA5DF37E253217E000F1332D /* AppDelegate.swift in Sources */,
 				FAC4BBCC2546325400D02541 /* AricleTablePresenter.swift in Sources */,
+				FAC4BBD22548D52F00D02541 /* ArticleTableViewCell.swift in Sources */,
 				FA5DF380253217E000F1332D /* SceneDelegate.swift in Sources */,
 				FA5DF3CE25321E8300F1332D /* QueryService.swift in Sources */,
 				FA5DF3C525321C5300F1332D /* Article.swift in Sources */,
